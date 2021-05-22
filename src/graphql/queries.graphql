@@ -1,0 +1,78 @@
+# this is an auto generated file. This will be overwritten
+query GetPost($id: ID!) {
+  getPost(id: $id) {
+    type
+    id
+    content
+    owner
+    timestamp
+  }
+}
+query ListPosts(
+  $filter: ModelPostFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      type
+      id
+      content
+      owner
+      timestamp
+    }
+    nextToken
+  }
+}
+query ListPostsSortedByTimestamp(
+  $type: String
+  $timestamp: ModelIntKeyConditionInput
+  $sortDirection: ModelSortDirection
+  $filter: ModelPostFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listPostsSortedByTimestamp(
+    type: $type
+    timestamp: $timestamp
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      type
+      id
+      content
+      owner
+      timestamp
+    }
+    nextToken
+  }
+}
+query ListPostsBySpecificOwner(
+  $owner: String
+  $timestamp: ModelIntKeyConditionInput
+  $sortDirection: ModelSortDirection
+  $filter: ModelPostFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listPostsBySpecificOwner(
+    owner: $owner
+    timestamp: $timestamp
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      type
+      id
+      content
+      owner
+      timestamp
+    }
+    nextToken
+  }
+}

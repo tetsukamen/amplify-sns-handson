@@ -1,0 +1,23 @@
+<mat-card class="post-card" *ngFor="let post of posts">
+    <mat-card-header>
+        <div mat-card-avatar class="post-card__header-image"></div>
+        <mat-card-title>{{post.owner}}</mat-card-title>
+        <mat-card-subtitle>{{post.timestamp*1000 | date:'yyyy年MM月dd日'}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            {{post.content}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-icon-button>
+            <mat-icon>favorite_border</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>loop</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>reply</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>
